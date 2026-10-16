@@ -26,3 +26,4 @@ public class AuthResponse {
     public CompanyDto getCompany() { return company; }
     public void setCompany(CompanyDto company) { this.company = company; }
 }
+

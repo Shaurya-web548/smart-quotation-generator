@@ -266,3 +266,4 @@ public class QuotationService {
         return "Q-" + (maxSeq + 1);
     }
 }
+

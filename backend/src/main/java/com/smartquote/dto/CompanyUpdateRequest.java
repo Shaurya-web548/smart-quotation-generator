@@ -57,3 +57,4 @@ public class CompanyUpdateRequest {
     public String getDefaultTerms() { return defaultTerms; }
     public void setDefaultTerms(String defaultTerms) { this.defaultTerms = defaultTerms; }
 }
+

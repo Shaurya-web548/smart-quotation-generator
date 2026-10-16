@@ -102,3 +102,4 @@ export interface AuthResponse {
   user: User;
   company: Company;
 }
+

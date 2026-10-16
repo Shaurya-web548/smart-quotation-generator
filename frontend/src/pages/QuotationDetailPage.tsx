@@ -10,12 +10,9 @@ import {
   Copy,
   CheckCircle,
   XCircle,
-  Clock,
   Send,
-  AlertCircle,
   Loader2,
-  Building2,
-  Calendar
+  Building2
 } from 'lucide-react';
 
 export const QuotationDetailPage: React.FC = () => {
@@ -315,3 +312,4 @@ export const QuotationDetailPage: React.FC = () => {
     </div>
   );
 };
+

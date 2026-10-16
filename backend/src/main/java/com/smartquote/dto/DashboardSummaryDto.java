@@ -43,3 +43,4 @@ public class DashboardSummaryDto {
     public List<QuotationResponseDto> getRecentQuotations() { return recentQuotations; }
     public void setRecentQuotations(List<QuotationResponseDto> recentQuotations) { this.recentQuotations = recentQuotations; }
 }
+

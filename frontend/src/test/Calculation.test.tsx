@@ -26,3 +26,4 @@ describe('Quotation Math Consistency', () => {
     expect(total).toBe(424.27);
   });
 });
+

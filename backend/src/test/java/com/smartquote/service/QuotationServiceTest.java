@@ -137,3 +137,4 @@ class QuotationServiceTest {
         assertEquals(quotationA.getTotalAmount(), duplicate.getTotalAmount());
     }
 }
+

@@ -77,3 +77,4 @@ class AuthControllerIntegrationTest {
                 .andExpect(jsonPath("$.data.user.email").value(uniqueEmail));
     }
 }
+

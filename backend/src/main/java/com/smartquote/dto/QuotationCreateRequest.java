@@ -74,3 +74,4 @@ public class QuotationCreateRequest {
     public List<QuotationItemDto> getItems() { return items; }
     public void setItems(List<QuotationItemDto> items) { this.items = items; }
 }
+

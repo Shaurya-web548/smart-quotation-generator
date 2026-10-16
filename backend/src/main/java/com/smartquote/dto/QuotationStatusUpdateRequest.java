@@ -15,3 +15,4 @@ public class QuotationStatusUpdateRequest {
     public QuotationStatus getStatus() { return status; }
     public void setStatus(QuotationStatus status) { this.status = status; }
 }
+

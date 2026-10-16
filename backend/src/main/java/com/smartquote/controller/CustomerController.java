@@ -36,3 +36,4 @@ public class CustomerController {
         return ResponseEntity.ok(ApiResponse.success("Customer created successfully", created));
     }
 }
+

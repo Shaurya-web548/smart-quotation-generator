@@ -12,7 +12,7 @@ public enum QuotationStatus {
         return switch (this) {
             case DRAFT -> target == SENT || target == ACCEPTED || target == REJECTED || target == EXPIRED;
             case SENT -> target == ACCEPTED || target == REJECTED || target == EXPIRED || target == DRAFT;
-            case ACCEPTED, REJECTED, EXPIRED -> false; // Finalized states cannot transition
+            case ACCEPTED, REJECTED, EXPIRED -> false;
         };
     }
 }

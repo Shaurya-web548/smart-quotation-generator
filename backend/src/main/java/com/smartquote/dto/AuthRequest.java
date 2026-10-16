@@ -59,3 +59,4 @@ public class AuthRequest {
         public void setCompanyName(String companyName) { this.companyName = companyName; }
     }
 }
+

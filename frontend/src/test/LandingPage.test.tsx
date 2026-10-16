@@ -29,3 +29,4 @@ describe('LandingPage Component', () => {
     expect(screen.getByText('Multi-Tenant Isolation')).toBeInTheDocument();
   });
 });
+

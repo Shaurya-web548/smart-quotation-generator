@@ -153,3 +153,4 @@ pg_restore -U smartquote -h <host> -d smartquote -v -c smartquote_backup.dump
 | `Cannot connect to database` | Bad JDBC URL or network restriction | Ensure URL format begins with `jdbc:postgresql://` and includes `?sslmode=require` if required by cloud DB provider. |
 | `White screen on route refresh` | SPA redirect rule missing | Ensure `vercel.json` (for Vercel) or `_redirects` (for Netlify) is deployed in the frontend build. |
 | `Flyway schema error` | Existing tables conflict | Ensure the database is clean for the initial migration, or set `flyway.baseline-on-migrate: true`. |
+

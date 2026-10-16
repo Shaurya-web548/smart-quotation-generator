@@ -16,13 +16,10 @@ export const CreateQuotationPage: React.FC = () => {
   const [existingCustomers, setExistingCustomers] = useState<Customer[]>([]);
   const [selectedCustomerId, setSelectedCustomerId] = useState<number | undefined>();
 
-  const today = new Date().toISOString().split('T')[0];
-  const defaultExpiry = new Date(Date.now() + (company?.defaultValidityDays || 30) * 86400000)
-    .toISOString()
-    .split('T')[0];
-
-  const [issueDate, setIssueDate] = useState(today);
-  const [expiryDate, setExpiryDate] = useState(defaultExpiry);
+  const [issueDate, setIssueDate] = useState(() => new Date().toISOString().split('T')[0]);
+  const [expiryDate, setExpiryDate] = useState(() =>
+    new Date(Date.now() + (company?.defaultValidityDays || 30) * 86400000).toISOString().split('T')[0]
+  );
   const [discountPercentage, setDiscountPercentage] = useState<number>(0);
   const [taxPercentage, setTaxPercentage] = useState<number>(company?.defaultTaxRate || 18);
   const [notes, setNotes] = useState('');
@@ -437,3 +434,4 @@ export const CreateQuotationPage: React.FC = () => {
     </div>
   );
 };
+

@@ -39,3 +39,4 @@ public class CustomerDto {
     public String getTaxId() { return taxId; }
     public void setTaxId(String taxId) { this.taxId = taxId; }
 }
+

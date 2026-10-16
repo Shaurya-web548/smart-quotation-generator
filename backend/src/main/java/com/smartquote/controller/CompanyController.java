@@ -41,3 +41,4 @@ public class CompanyController {
         return ResponseEntity.ok(ApiResponse.success("Logo uploaded successfully", companyService.uploadLogo(file)));
     }
 }
+

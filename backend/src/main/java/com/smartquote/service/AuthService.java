@@ -111,3 +111,4 @@ public class AuthService {
         return new AuthResponse(token, UserDto.fromEntity(user), CompanyDto.fromEntity(company));
     }
 }
+

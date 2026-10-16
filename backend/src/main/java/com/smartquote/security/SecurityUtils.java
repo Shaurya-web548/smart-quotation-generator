@@ -41,3 +41,4 @@ public class SecurityUtils {
                 .orElseThrow(() -> new ResourceNotFoundException("Company profile not found for authenticated user"));
     }
 }
+

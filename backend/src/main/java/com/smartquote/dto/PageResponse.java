@@ -37,3 +37,4 @@ public class PageResponse<T> {
     public boolean isLast() { return isLast; }
     public void setLast(boolean last) { isLast = last; }
 }
+

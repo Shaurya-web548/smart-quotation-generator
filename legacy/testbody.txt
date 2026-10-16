@@ -1,0 +1,5 @@
+customer=Test Co
+discount=10
+gst=18
+item=Widget|2|150.00
+item=Gadget|1|99.50

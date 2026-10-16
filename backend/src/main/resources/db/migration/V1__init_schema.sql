@@ -81,3 +81,4 @@ CREATE INDEX IF NOT EXISTS idx_quotations_status ON quotations(status);
 CREATE INDEX IF NOT EXISTS idx_quotations_issue_date ON quotations(issue_date);
 CREATE INDEX IF NOT EXISTS idx_customers_company_id ON customers(company_id);
 CREATE INDEX IF NOT EXISTS idx_quotation_items_quotation_id ON quotation_items(quotation_id);
+

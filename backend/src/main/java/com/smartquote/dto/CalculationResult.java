@@ -57,3 +57,4 @@ public class CalculationResult {
     public BigDecimal getTotalAmount() { return totalAmount; }
     public List<CalculatedItem> getItems() { return items; }
 }
+

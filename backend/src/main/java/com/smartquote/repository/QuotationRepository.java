@@ -41,3 +41,4 @@ public interface QuotationRepository extends JpaRepository<Quotation, Long> {
     @Query("SELECT q.quotationNumber FROM Quotation q WHERE q.company = :company ORDER BY q.id DESC")
     List<String> findLatestQuotationNumbers(@Param("company") Company company, Pageable pageable);
 }
+

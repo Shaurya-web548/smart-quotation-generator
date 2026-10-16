@@ -49,3 +49,4 @@ Every business account is an isolated tenant.
 
 - **Global Exception Handler**: `GlobalExceptionHandler` intercepts exceptions and renders consistent, sanitize JSON error envelopes (`ApiResponse<T>`).
 - **No Stack Traces**: Internal exception traces, SQL dialect details, and class hierarchies are logged server-side and never returned in HTTP responses.
+

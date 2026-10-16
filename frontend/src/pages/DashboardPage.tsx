@@ -8,10 +8,8 @@ import {
   FilePlus,
   Send,
   CheckCircle,
-  XCircle,
   Clock,
   ArrowRight,
-  TrendingUp,
   AlertCircle,
   Eye,
   Download,
@@ -250,3 +248,4 @@ export const DashboardPage: React.FC = () => {
     </div>
   );
 };
+

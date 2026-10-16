@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
-import { Company } from '../types';
 import { Building2, Save, Upload, AlertCircle, CheckCircle, Loader2 } from 'lucide-react';
 
 export const CompanySettingsPage: React.FC = () => {
@@ -271,3 +270,4 @@ export const CompanySettingsPage: React.FC = () => {
     </div>
   );
 };
+

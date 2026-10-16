@@ -10,3 +10,4 @@ public class SmartQuotationApplication {
         SpringApplication.run(SmartQuotationApplication.class, args);
     }
 }
+
