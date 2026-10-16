@@ -1,31 +1,29 @@
 # Multi-stage Docker build for Smart Quotation Generator Backend
-# Stage 1: Build stage with Maven and OpenJDK 21
-FROM eclipse-temurin:21-jdk-jammy AS builder
+# Stage 1: Build with Maven + OpenJDK 21 (Maven is pre-installed in this image)
+FROM maven:3.9-eclipse-temurin-21 AS builder
 
 WORKDIR /build
 
-# Copy pom.xml and download dependencies first for fast layer caching
+# Copy pom.xml first and download dependencies (layer-cached separately)
 COPY pom.xml .
-RUN ./mvnw dependency:go-offline -B 2>/dev/null || mvn dependency:go-offline -B 2>/dev/null || true
+RUN mvn dependency:go-offline -B
 
-# Copy source code and build production fat JAR
+# Copy source and build the fat JAR
 COPY src ./src
-RUN mvn clean package -DskipTests
+RUN mvn clean package -DskipTests -B
 
-# Stage 2: Runtime stage with minimal JRE
+# Stage 2: Minimal runtime image (no build tools, smaller size)
 FROM eclipse-temurin:21-jre-jammy
 
 WORKDIR /app
 
-# Create non-root system user for security
+# Create non-root user for security
 RUN groupadd -r spring && useradd -r -g spring spring
 
-# Copy compiled JAR from builder stage
+# Copy the compiled fat JAR from builder stage
 COPY --from=builder /build/target/smart-quotation-backend-1.0.0.jar app.jar
 
-# Set ownership
 RUN chown -R spring:spring /app
-
 USER spring:spring
 
 ENV PORT=8080 \
@@ -34,8 +32,7 @@ ENV PORT=8080 \
 
 EXPOSE 8080
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
   CMD curl -f http://localhost:${PORT}/api/v1/health || exit 1
 
 ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
-
