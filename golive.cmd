@@ -2,9 +2,10 @@
 setlocal
 cd /d "%~dp0legacy"
 echo [1/4] Freeing port 8080...
-for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":8080" ^| findstr "LISTENING"') do taskkill /F /PID %%a 2^>nul
-taskkill /F /IM java.exe 2>nul
-timeout /t 2 /nobreak >nul
+for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":8080" ^| findstr "LISTENING"') do (
+  taskkill /F /PID %%a >nul 2>nul
+)
+ping -n 3 127.0.0.1 >nul
 echo [2/4] Compiling legacy app...
 javac -nowarn QuotationApplet.java QuotationApp.java QuotationServer.java > compile.log 2>&1
 type compile.log
@@ -17,7 +18,7 @@ echo [3/4] Starting server on http://localhost:8080 ...
 start "QuotationServer-8080" /min cmd /c "java QuotationServer > server.log 2>&1"
 echo Waiting for server to respond...
 for /l %%i in (1,1,15) do (
-  timeout /t 1 /nobreak >nul
+  ping -n 2 127.0.0.1 >nul
   curl -s -o nul -m 2 http://localhost:8080/api/quotes
   if not errorlevel 1 goto :serverup
 )
